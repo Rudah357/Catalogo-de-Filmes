@@ -7,11 +7,12 @@ def mostrar_menu():
     print("              💠 CineLog                 ")
     print("——————————————————————————————————————————\n")
     print("1- Adicionar filmes")
-    print("2- Ver lista de filmes")
-    print("3- Pesquisar filme por nome")
-    print("4- Pesquisar filmes por gênero")
-    print("5- Pesquisar filmes por ano")
-    print("6- Sair\n")
+    print("2- Remover filme do catálogo")
+    print("3- Ver lista de filmes")
+    print("4- Pesquisar filme por nome")
+    print("5- Pesquisar filmes por gênero")
+    print("6- Pesquisar filmes por ano")
+    print("7- Sair\n")
     print("——————————————————————————————————————————")
     
 def iniciar_app():
@@ -27,22 +28,26 @@ def iniciar_app():
                 catalogo.back()
 
             case "2":
-                catalogo.listar_filmes(meus_filmes)
+                catalogo.remover_filme(meus_filmes)
                 catalogo.back()
 
             case "3":
-                catalogo.pesquisar_por_titulo(meus_filmes)
+                catalogo.listar_filmes(meus_filmes)
                 catalogo.back()
 
             case "4":
-                catalogo.pesquisar_por_genero(meus_filmes)
+                catalogo.pesquisar_por_titulo(meus_filmes)
                 catalogo.back()
 
             case "5":
-                catalogo.pesquisar_por_ano(meus_filmes)
+                catalogo.pesquisar_por_genero(meus_filmes)
                 catalogo.back()
 
             case "6":
+                catalogo.pesquisar_por_ano(meus_filmes)
+                catalogo.back()
+
+            case "7":
                 catalogo.limpar()
                 print("Encerrando e salvando programa...")
                 break

@@ -12,12 +12,5 @@
         "ano": 2017,
         "nota": 5.0,
         "critica": "Nenhuma"
-    },
-    {
-        "titulo": "O show de truman",
-        "genero": "Drama",
-        "ano": 1999,
-        "nota": 4.0,
-        "critica": ""
     }
 ]

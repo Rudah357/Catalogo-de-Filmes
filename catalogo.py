@@ -73,6 +73,20 @@ def adicionar_filmes(catalogo):
     catalogo.append(filme)
     salvar_dados(catalogo)
     print(f"🟢 '{titulo}' adicionado com sucesso ao seu catálogo!")
+
+def remover_filme(catalogo):
+    limpar()
+    print("———— REMOVER FILME ————\n")
+    filme_para_remover = input("Escreva o título do filme para remove-lo do catálogo: ").strip()
+
+    if filme_para_remover not in catalogo:
+        print("Filme não encontrado, tente novamente...")
+
+    else:
+        for filme_para_remover in catalogo:
+            if filme_para_remover["titulo"].lower() == filme_para_remover.lower():
+                lista_filmes.remove(filme_para_remover)
+                print("\nFilme removido do catálogo com sucesso!")
         
 def listar_filmes(catalogo):
     limpar()
