@@ -1,0 +1,16 @@
+[
+    {
+        "titulo": "Show de Truman",
+        "genero": "Drama",
+        "ano": 1998,
+        "nota": 5.0,
+        "critica": "Nenhuma"
+    },
+    {
+        "titulo": "Vingadores guerra infinita",
+        "genero": "Ação",
+        "ano": 2017,
+        "nota": 5.0,
+        "critica": "Nenhuma"
+    }
+]
