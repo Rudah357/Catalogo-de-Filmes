@@ -20,14 +20,6 @@ def carregar_dados():
 def salvar_dados(dados):
     with open(ARQUIVO_DADOS, "w", encoding="utf-8") as arquivo:
         json.dump(dados, arquivo, indent=4, ensure_ascii=False)
-        
-
-def filme_ja_existente(catalogo):
-
-    for filme in catalogo:
-        if filme['titulo'].lower() == filme['titulo'].lower():
-            print(f"\nERRO: O filme {filme['titulo']} já está cadastrado no seu catálogo!")
-            break
 
 def obter_ano_valido():
     while True:
@@ -60,7 +52,10 @@ def adicionar_filmes(catalogo):
     print("———— REGISTRAR NOVO FILME ————\n")
     titulo = input("Título: ").strip()
 
-    filme_ja_existente(catalogo)
+    for filme in catalogo:
+        if filme["titulo"].lower() == titulo.lower():
+            print(f"\nERRO: O filme '{filme['titulo']}' já está cadastrado no seu catálogo!")
+            return
         
     genero = input("Gênero (ex: Ação, Comédia e Drama): ").strip()
     ano = obter_ano_valido()
@@ -122,7 +117,7 @@ def pesquisar_por_genero(catalogo):
 def pesquisar_por_ano(catalogo):
     limpar
     try:
-        ano_pesquisa = int(input("Digite o ano de lançamento exato para pesquisar: "))
+        ano_pesquisa = int(input("Digite o ano de lançamento exato para pesquisar: ")).strip()
     except ValueError:
         print("ERRO: Digite um ano válido (número inteiro).")
         return
